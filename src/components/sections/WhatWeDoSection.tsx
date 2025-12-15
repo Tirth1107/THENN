@@ -1,11 +1,12 @@
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
     number: "01",
     title: "Brand Strategy",
-    description: "We distill your vision into a clear, compelling brand identity that resonates.",
+    description: "We distill your vision into a clear, compelling brand identity that resonates with your audience.",
   },
   {
     number: "02",
@@ -26,17 +27,26 @@ const services = [
 
 export const WhatWeDoSection = () => {
   return (
-    <section className="py-32 lg:py-40 bg-card/30">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="py-32 lg:py-44 bg-card/30 relative overflow-hidden">
+      {/* Decorative element */}
+      <motion.div
+        className="absolute -right-32 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-border/20"
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      />
+
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mb-20">
           <ScrollReveal>
-            <span className="text-sm font-medium tracking-widest uppercase text-primary mb-4 block">
+            <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-6 block">
               What We Do
             </span>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-foreground leading-[1.1]">
               End-to-end digital
               <br />
               <span className="text-muted-foreground">solutions</span>
@@ -45,27 +55,51 @@ export const WhatWeDoSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {services.map((service, index) => (
-            <ScrollReveal key={service.number} delay={index * 0.1}>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" staggerDelay={0.15}>
+          {services.map((service) => (
+            <StaggerItem key={service.number}>
               <motion.div
-                className="group p-8 lg:p-10 border border-border/50 rounded-2xl bg-card/50 hover:bg-card transition-all duration-500"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                className="group relative p-8 lg:p-10 border border-border/30 rounded-2xl bg-background/50 backdrop-blur-sm cursor-pointer overflow-hidden"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <span className="text-sm font-medium text-primary mb-6 block">
-                  {service.number}
-                </span>
-                <h3 className="text-2xl lg:text-3xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
+                {/* Hover gradient */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                />
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-6">
+                    <span className="text-sm font-medium text-primary">
+                      {service.number}
+                    </span>
+                    <motion.div
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      whileHover={{ rotate: 45 }}
+                    >
+                      <ArrowUpRight className="w-5 h-5 text-primary" />
+                    </motion.div>
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Bottom line */}
+                <motion.div
+                  className="absolute bottom-0 left-0 h-[2px] bg-primary"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                />
               </motion.div>
-            </ScrollReveal>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
