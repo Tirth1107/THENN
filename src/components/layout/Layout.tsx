@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { motion } from "framer-motion";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import Preloader from "@/components/Preloader";
 
 interface LayoutProps {
   children: ReactNode;
@@ -30,6 +31,7 @@ const pageVariants = {
 };
 
 export const Layout = ({ children }: LayoutProps) => {
+  const [loading, setLoading] = useState(true);
   return (
     <motion.div
       className="min-h-screen bg-background"
@@ -38,8 +40,9 @@ export const Layout = ({ children }: LayoutProps) => {
       animate="enter"
       exit="exit"
     >
+      <Preloader onDone={() => setLoading(false)} />
       <Header />
-      <main>{children}</main>
+      <main id="main-content" className={loading ? "preloading" : ""} aria-hidden={loading}>{children}</main>
       <Footer />
       <WhatsAppButton />
     </motion.div>
