@@ -1,0 +1,100 @@
+import { Link } from "react-router-dom";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
+
+const footerLinks = {
+  navigation: [
+    { name: "Work", href: "/work" },
+    { name: "Services", href: "/services" },
+    { name: "Process", href: "/process" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ],
+  social: [
+    { name: "Instagram", href: "#" },
+    { name: "LinkedIn", href: "#" },
+    { name: "Twitter", href: "#" },
+  ],
+};
+
+export const Footer = () => {
+  return (
+    <footer className="border-t border-border/50 bg-background">
+      <div className="container mx-auto px-6 lg:px-12 py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+          {/* Brand */}
+          <ScrollReveal className="lg:col-span-4">
+            <Link to="/" className="inline-block">
+              <span className="text-3xl font-semibold tracking-tight text-foreground">
+                Thenn
+              </span>
+            </Link>
+            <p className="mt-4 text-muted-foreground max-w-sm leading-relaxed">
+              Crafting digital experiences that elevate brands and inspire audiences.
+            </p>
+          </ScrollReveal>
+
+          {/* Navigation */}
+          <ScrollReveal delay={0.1} className="lg:col-span-3">
+            <h4 className="text-sm font-medium text-foreground mb-4">Navigation</h4>
+            <ul className="space-y-3">
+              {footerLinks.navigation.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          {/* Social */}
+          <ScrollReveal delay={0.2} className="lg:col-span-3">
+            <h4 className="text-sm font-medium text-foreground mb-4">Connect</h4>
+            <ul className="space-y-3">
+              {footerLinks.social.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          {/* Contact */}
+          <ScrollReveal delay={0.3} className="lg:col-span-2">
+            <h4 className="text-sm font-medium text-foreground mb-4">Contact</h4>
+            <a
+              href="https://wa.me/917016565502"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              +91 70165 65502
+            </a>
+          </ScrollReveal>
+        </div>
+
+        {/* Bottom */}
+        <ScrollReveal delay={0.4} className="mt-16 pt-8 border-t border-border/50">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Thenn. All rights reserved.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Crafted with precision
+            </p>
+          </div>
+        </ScrollReveal>
+      </div>
+    </footer>
+  );
+};
