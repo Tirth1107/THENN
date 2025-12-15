@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 6%;
+    --foreground: 40 10% 92%;
+
+    --card: 220 15% 9%;
+    --card-foreground: 40 10% 92%;
+
+    --popover: 220 15% 9%;
+    --popover-foreground: 40 10% 92%;
+
+    --primary: 40 25% 72%;
+    --primary-foreground: 220 15% 6%;
+
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 40 10% 85%;
+
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 40 25% 72%;
+    --accent-foreground: 220 15% 6%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 10% 92%;
+
+    --border: 220 10% 15%;
+    --input: 220 10% 15%;
+    --ring: 40 25% 72%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --text-primary: 40 10% 92%;
+    --text-secondary: 220 10% 65%;
+    --text-muted: 220 10% 45%;
+    
+    --surface-elevated: 220 15% 10%;
+    --surface-overlay: 220 15% 12%;
+    
+    --glow-accent: 40 25% 72%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--primary)) 100%
+    );
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px -15px hsl(var(--glow-accent) / 0.3);
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                linear-gradient(135deg, hsl(var(--border)) 0%, hsl(var(--primary) / 0.2) 100%) border-box;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Preloader styles */
+.preloader {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(6,8,15,1) 0%, rgba(10,12,20,1) 100%);
+  z-index: 9999;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: opacity 600ms cubic-bezier(.22,.9,.3,1), transform 600ms cubic-bezier(.22,.9,.3,1), backdrop-filter 700ms cubic-bezier(.22,.9,.3,1);
+}
+
+.preloader__inner {
+  text-align: center;
+  color: hsl(var(--foreground));
+}
+
+.preloader__logo {
+  width: 420px;
+  height: 84px;
+  display: block;
+  transform-origin: center;
+  animation: logo-pop 900ms cubic-bezier(.2,.9,.3,1) both;
+  filter: drop-shadow(0 8px 40px rgba(0,0,0,0.6)) drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.preloader__logo text {
+  /* Ensure SVG text uses the same font as the page */
+  font-family: Outfit, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.preloader__tagline {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: hsl(var(--text-secondary));
+  opacity: 0; /* hide until explicitly shown */
+  transform: translateY(10px);
+}
+
+.preloader__tagline.visible {
+  opacity: 0.95;
+  animation: tagline-up 600ms cubic-bezier(.2,.9,.3,1) both;
+}
+
+.preloader__shine {
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(40px);
+  background: linear-gradient(90deg, rgba(64,180,190,0.10), rgba(255,255,255,0.06), rgba(64,180,190,0.12));
+  transform: translateY(100px) scale(1.2);
+  animation: shine 1600ms 100ms forwards;
+}
+
+.preloader--exit {
+  opacity: 0;
+  transform: scale(1.02);
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+}
+
+@keyframes logo-pop {
+  0% { transform: translateY(12px) scale(.9); opacity: 0; filter: blur(4px); }
+  60% { transform: translateY(-6px) scale(1.03); opacity: 1; filter: blur(0px); }
+  100% { transform: translateY(0px) scale(1); opacity: 1; filter: blur(0px); }
+}
+
+@keyframes tagline-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 0.95; }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-40%) translateY(60px) scale(.9); opacity: 0; }
+  30% { opacity: 0.25; }
+  100% { transform: translateX(40%) translateY(40px) scale(1.05); opacity: 0.08; }
+}
+
+/* While preloader is active we avoid blurring the DOM directly — the overlay uses backdrop-filter.
+   Keep main content non-interactive during preloading. */
+#main-content.preloading {
+  pointer-events: none;
+}
+
