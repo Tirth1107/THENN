@@ -4,40 +4,41 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 
+// Updated with your real project data
 const projects = [
   {
     id: 1,
-    title: "Apex Ventures",
-    category: "Venture Capital",
-    description: "Brand identity and web presence for a leading investment firm.",
-    color: "from-primary/20 to-primary/5",
+    title: "Gamify IAS Academy",
+    category: "Branding & Web Presence",
+    description: "A high-performance digital ecosystem designed to elevate the brand identity of India's premier UPSC coaching institute.",
+    color: "from-blue-600/20 to-indigo-600/5",
   },
   {
     id: 2,
-    title: "Modo Studio",
-    category: "Architecture",
-    description: "Minimalist portfolio showcasing award-winning designs.",
-    color: "from-secondary to-card",
+    title: "LMS & Exam Engine",
+    category: "EdTech Architecture",
+    description: "A custom-built Learning Management System and Exam Engine designed to simulate real-world competitive testing environments.",
+    color: "from-emerald-500/20 to-teal-500/5",
   },
   {
     id: 3,
-    title: "Pulse Health",
-    category: "Healthcare Tech",
-    description: "Digital platform connecting patients with specialists.",
-    color: "from-muted to-background",
+    title: "Gamify IAS AI System",
+    category: "AI & Automation",
+    description: "An advanced AI integration providing personalized study paths and automated doubt-solving for thousands of aspirants.",
+    color: "from-purple-600/20 to-violet-600/5",
   },
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["8deg", "-8deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-8deg", "8deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!cardRef.current) return;
@@ -60,7 +61,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   return (
     <motion.div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-2xl border border-border/30 bg-card cursor-pointer"
+      className="group relative overflow-hidden rounded-[2rem] bg-card/30 backdrop-blur-sm border border-white/10 cursor-pointer h-full"
       style={{
         rotateX,
         rotateY,
@@ -68,62 +69,64 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+      whileHover={{ y: -10, scale: 1.01 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
-      {/* Image placeholder */}
-      <div className={`aspect-[4/3] bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+      {/* Visual Header / Image Placeholder */}
+      <div className={`aspect-[16/8] bg-gradient-to-br ${project.color} relative overflow-hidden`}>
         <motion.div
-          className="absolute inset-0 bg-primary/10"
+          className="absolute inset-0 bg-white/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
         />
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center relative z-10">
           <motion.span
-            className="text-7xl lg:text-8xl font-bold text-foreground/5"
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.4 }}
+            className="text-7xl lg:text-8xl font-bold text-white/5 pointer-events-none"
+            style={{ translateZ: 50 }}
           >
             {project.id.toString().padStart(2, "0")}
           </motion.span>
         </div>
+        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-primary/20 blur-[60px] rounded-full group-hover:bg-primary/30 transition-colors duration-500" />
       </div>
 
-      {/* Content */}
-      <div className="p-6 lg:p-8">
+      {/* Card Content */}
+      <div className="p-8 lg:p-10 relative z-20">
         <div className="flex items-center justify-between mb-4">
           <motion.span
-            className="text-xs font-medium tracking-[0.15em] uppercase text-primary"
-            initial={{ x: 0 }}
-            whileHover={{ x: 5 }}
+            className="text-[10px] font-bold tracking-[0.25em] uppercase text-primary/80"
+            style={{ translateZ: 30 }}
           >
             {project.category}
           </motion.span>
           <motion.div
-            whileHover={{ rotate: 45, scale: 1.2 }}
-            transition={{ duration: 0.3 }}
+            whileHover={{ rotate: 45, scale: 1.2, backgroundColor: "rgba(255,255,255,0.1)" }}
+            className="p-2 rounded-full border border-white/5 transition-colors duration-300"
+            style={{ translateZ: 40 }}
           >
-            <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+            <ArrowUpRight className="w-5 h-5 text-foreground/70 group-hover:text-primary" />
           </motion.div>
         </div>
-        <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+        
+        <h3 className="text-2xl lg:text-3xl font-semibold text-foreground mb-3" style={{ translateZ: 20 }}>
           {project.title}
         </h3>
-        <p className="text-sm text-muted-foreground">
+        
+        <p className="text-muted-foreground/70 leading-relaxed max-w-md" style={{ translateZ: 10 }}>
           {project.description}
         </p>
       </div>
 
-      {/* Shine effect on hover */}
+      {/* Interactive Hover Shine */}
       <motion.div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"
         style={{
-          background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.03) 45%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.03) 55%, transparent 60%)",
+          background: "linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%)",
+          backgroundSize: "200% 200%",
         }}
-        initial={{ x: "-100%" }}
-        whileHover={{ x: "100%" }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        initial={{ backgroundPosition: "200% 0%" }}
+        whileHover={{ backgroundPosition: "-200% 0%" }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
       />
     </motion.div>
   );
@@ -131,47 +134,54 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
 export const WorkSection = () => {
   return (
-    <section className="py-32 lg:py-44">
+    <section className="py-32 lg:py-44 relative">
       <div className="container mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
           <div className="max-w-2xl">
             <ScrollReveal>
-              <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-6 block">
-                Selected Work
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-6 block">
+                Portfolio
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-foreground leading-[1.1]">
-                Projects that
-                <br />
-                <span className="text-muted-foreground">speak volumes</span>
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight text-foreground leading-[1.1]">
+                Case Studies <br />
+                <span className="text-muted-foreground/50">of Innovation.</span>
               </h2>
             </ScrollReveal>
           </div>
+          
           <ScrollReveal delay={0.2}>
             <Magnetic>
               <Link
                 to="/work"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-300"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 transition-all duration-300"
               >
-                View All Projects
-                <motion.span
-                  whileHover={{ x: 4, y: -4 }}
+                <span className="text-sm font-medium">Explore All Work</span>
+                <motion.div
+                  whileHover={{ x: 3, y: -3 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ArrowUpRight className="w-4 h-4" />
-                </motion.span>
+                  <ArrowUpRight className="w-4 h-4 text-primary" />
+                </motion.div>
               </Link>
             </Magnetic>
           </ScrollReveal>
         </div>
 
         {/* Projects Grid */}
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8" staggerDelay={0.2}>
+        <StaggerContainer 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12" 
+          staggerDelay={0.15}
+        >
           {projects.map((project, index) => (
-            <StaggerItem key={project.id}>
-              <ProjectCard project={project} index={index} />
+            <StaggerItem 
+              key={project.id}
+              // If it's the 3rd project (index 2), make it span both columns on large screens
+              className={index === 2 ? "lg:col-span-2" : ""}
+            >
+              <ProjectCard project={project} />
             </StaggerItem>
           ))}
         </StaggerContainer>

@@ -30,7 +30,7 @@ const About = () => {
           <div className="max-w-4xl">
             <ScrollReveal>
               <span className="text-sm font-medium tracking-widest uppercase text-primary mb-4 block">
-                About Thenn
+                About Theन्न
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -42,7 +42,7 @@ const About = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                A design-first agency obsessed with creating digital experiences 
+                A design-first agency obsessed with creating digital experiences
                 that elevate brands and inspire audiences.
               </p>
             </ScrollReveal>
@@ -65,27 +65,27 @@ const About = () => {
             <div className="flex flex-col justify-center">
               <ScrollReveal>
                 <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-8">
-                  Design is not just what it looks like. 
+                  Design is not just what it looks like.
                   Design is how it works.
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Thenn was founded with a simple belief: exceptional design is the 
-                  foundation of every successful brand. In a world saturated with noise, 
+                  Theन्न was founded with a simple belief: exceptional design is the
+                  foundation of every successful brand. In a world saturated with noise,
                   we create clarity.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  We're a small team of strategists, designers, and developers who 
-                  believe in doing fewer things, but doing them exceptionally well. 
+                  We're a small team of strategists, designers, and developers who
+                  believe in doing fewer things, but doing them exceptionally well.
                   Quality over quantity, always.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.3}>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Every project we take on receives our full attention. We partner 
+                  Every project we take on receives our full attention. We partner
                   with brands we believe in and invest ourselves in their success.
                 </p>
               </ScrollReveal>

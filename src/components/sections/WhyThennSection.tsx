@@ -29,7 +29,7 @@ export const WhyThennSection = () => {
           <div>
             <ScrollReveal>
               <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-6 block">
-                Why Thenn
+                Why Theन्न
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -41,7 +41,7 @@ export const WhyThennSection = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We believe exceptional design is the foundation of every successful brand. 
+                We believe exceptional design is the foundation of every successful brand.
                 Every pixel, every interaction, every detail matters.
               </p>
             </ScrollReveal>
@@ -56,7 +56,7 @@ export const WhyThennSection = () => {
                   whileHover={{ x: 8, backgroundColor: "hsl(var(--card) / 0.6)" }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 border border-primary/20"
                     whileHover={{ scale: 1.1, rotate: 10 }}
                     transition={{ duration: 0.3 }}

@@ -10,9 +10,9 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   social: [
-    { name: "Instagram", href: "#" },
-    { name: "LinkedIn", href: "#" },
-    { name: "Twitter", href: "#" },
+    { name: "Instagram", href: "https://www.instagram.com/thenn.in" },
+    // { name: "LinkedIn", href: "#" },
+    // { name: "Twitter", href: "#" },
   ],
 };
 
@@ -23,10 +23,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand */}
           <ScrollReveal className="lg:col-span-4">
-            <Link to="/" className="inline-block">
-              <span className="text-3xl font-semibold tracking-tight text-foreground">
-                Thenn
-              </span>
+            <Link to="/" className="text-2xl font-semibold tracking-tight text-foreground">
+              Theन्न
             </Link>
             <p className="mt-4 text-muted-foreground max-w-sm leading-relaxed">
               Crafting digital experiences that elevate brands and inspire audiences.
@@ -87,10 +85,10 @@ export const Footer = () => {
         <ScrollReveal delay={0.4} className="mt-16 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Thenn. All rights reserved.
+              © {new Date().getFullYear()} Theन्न. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
-              Crafted with precision
+              Crafted with ❤️ and precision by Theन्न.
             </p>
           </div>
         </ScrollReveal>

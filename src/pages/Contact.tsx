@@ -42,7 +42,7 @@ const Contact = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Have a project in mind? We'd love to hear about it. 
+                Have a project in mind? We'd love to hear about it.
                 Tell us about your vision and let's explore how we can help.
               </p>
             </ScrollReveal>
@@ -87,7 +87,7 @@ const Contact = () => {
 
                 <ScrollReveal delay={0.2}>
                   <a
-                    href="mailto:hello@thenn.agency"
+                    href="mailto:hello@thenn.in"
                     className="group flex items-center gap-4 p-6 border border-border/50 rounded-xl bg-card/30 hover:bg-card/60 transition-all duration-300"
                   >
                     <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary/10">
@@ -98,7 +98,7 @@ const Contact = () => {
                         Email
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        hello@thenn.agency
+                        hello@thenn.in
                       </p>
                     </div>
                     <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />

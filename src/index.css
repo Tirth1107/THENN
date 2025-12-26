@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    --background: 220 15% 6%;
-    --foreground: 40 10% 92%;
+    --background: 220 20% 3%;
+    --foreground: 40 10% 96%;
 
     --card: 220 15% 9%;
     --card-foreground: 40 10% 92%;
@@ -90,6 +90,43 @@
     border: 1px solid transparent;
     background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
                 linear-gradient(135deg, hsl(var(--border)) 0%, hsl(var(--primary) / 0.2) 100%) border-box;
+  }
+
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-card {
+    @apply glass-morphism rounded-2xl transition-all duration-500 hover:bg-white/10 hover:border-white/20;
+  }
+
+  .glass-border {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-clip: padding-box;
+  }
+
+  .liquid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    filter: blur(80px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .liquid-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%);
+    animation: liquid 20s ease-in-out infinite;
   }
 }
 
