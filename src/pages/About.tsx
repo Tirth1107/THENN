@@ -94,6 +94,50 @@ const About = () => {
         </div>
       </section>
 
+      {/* Team */}
+      <section className="py-32 lg:py-40">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-16">
+            <ScrollReveal>
+              <span className="text-sm font-medium tracking-widest uppercase text-primary mb-4 block">
+                The Minds Behind THENN
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1]">
+                Leadership
+                <br />
+                <span className="text-muted-foreground">Team</span>
+              </h2>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ScrollReveal delay={0.1}>
+              <div className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 p-8 hover:border-primary/50 transition-colors duration-500">
+                <h3 className="text-2xl font-semibold mb-1">Tirth Joshi</h3>
+                <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">Founder & CEO</p>
+                <p className="text-muted-foreground">Visionary leader driving the agency's creative and strategic direction.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 p-8 hover:border-primary/50 transition-colors duration-500">
+                <h3 className="text-2xl font-semibold mb-1">Dhruman Kaneriya</h3>
+                <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">Co-Founder</p>
+                <p className="text-muted-foreground">Strategic partner focused on business growth and operations.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <div className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 p-8 hover:border-primary/50 transition-colors duration-500">
+                <h3 className="text-2xl font-semibold mb-1">Vaibhav Makvana</h3>
+                <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">CTO</p>
+                <p className="text-muted-foreground">Technical architect ensuring robust and high-performance digital solutions.</p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="py-32 lg:py-40 bg-card/30">
         <div className="container mx-auto px-6 lg:px-12">
