@@ -3,6 +3,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CTASection } from "@/components/sections/CTASection";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import SEO from "@/components/SEO";
 
 const steps = [
   {
@@ -68,6 +69,11 @@ const Process = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Our Process — How We Work"
+        description="Learn about our proven methodology for delivering exceptional digital experiences, from discovery and design to build and launch."
+        canonical="/process"
+      />
       {/* Hero */}
       <section className="pt-32 lg:pt-40 pb-20">
         <div className="container mx-auto px-6 lg:px-12">
@@ -86,7 +92,7 @@ const Process = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                A proven methodology refined over years of delivering 
+                A proven methodology refined over years of delivering
                 exceptional digital experiences for ambitious brands.
               </p>
             </ScrollReveal>

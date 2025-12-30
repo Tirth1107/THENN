@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Cpu, GraduationCap, LayoutPanelLeft, ExternalLink } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const projects = [
   {
@@ -53,6 +54,11 @@ const projects = [
 const Work = () => {
   return (
     <Layout>
+      <SEO
+        title="Our Work — Selected Projects"
+        description="Explore our portfolio of premium digital experiences, high-performance websites, and strategic brand transformations."
+        canonical="/work"
+      />
       {/* Hero Section */}
       <section className="pt-40 lg:pt-52 pb-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />

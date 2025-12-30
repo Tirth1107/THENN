@@ -24,7 +24,7 @@ export const Footer = () => {
           {/* Brand */}
           <ScrollReveal className="lg:col-span-4">
             <Link to="/" className="text-2xl font-semibold tracking-tight text-foreground">
-              Theन्न
+              Thenn
             </Link>
             <p className="mt-4 text-muted-foreground max-w-sm leading-relaxed">
               Crafting digital experiences that elevate brands and inspire audiences.
@@ -85,10 +85,10 @@ export const Footer = () => {
         <ScrollReveal delay={0.4} className="mt-16 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Theन्न. All rights reserved.
+              © {new Date().getFullYear()} Thenn. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
-              Crafted with ❤️ and precision by Theन्न.
+              Crafted with ❤️ and precision by Thenn.
             </p>
           </div>
         </ScrollReveal>

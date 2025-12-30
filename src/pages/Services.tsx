@@ -4,6 +4,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const services = [
   {
@@ -55,6 +56,11 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="Our Services — Digital Excellence"
+        description="Comprehensive digital solutions inclusive of brand strategy, premium web design, high-performance development, and motion design."
+        canonical="/services"
+      />
       {/* Hero */}
       <section className="pt-32 lg:pt-40 pb-20">
         <div className="container mx-auto px-6 lg:px-12">
@@ -73,7 +79,7 @@ const Services = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                End-to-end digital solutions, from strategy to launch. 
+                End-to-end digital solutions, from strategy to launch.
                 Every service is tailored to your unique needs.
               </p>
             </ScrollReveal>

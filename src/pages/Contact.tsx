@@ -3,6 +3,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, MessageCircle, Mail, MapPin, CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -44,6 +45,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Us — Start a Project"
+        description="Ready to elevate your digital presence? Get in touch with us to discuss your project, goals, and how we can help you achieve them."
+        canonical="/contact"
+      />
       {/* Hero */}
       <section className="pt-32 lg:pt-40 pb-20">
         <div className="container mx-auto px-6 lg:px-12">
@@ -68,7 +74,7 @@ const Contact = () => {
       <section className="pb-32 lg:pb-40">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-            
+
             {/* Contact Info (Left Column) */}
             <div className="lg:col-span-5">
               <ScrollReveal>
@@ -129,7 +135,7 @@ const Contact = () => {
                 <div className="relative p-8 border border-border/50 rounded-2xl bg-card/30 backdrop-blur-sm">
                   <AnimatePresence mode="wait">
                     {status === "success" ? (
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         className="py-12 text-center"
@@ -137,7 +143,7 @@ const Contact = () => {
                         <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-6" />
                         <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
                         <p className="text-muted-foreground mb-8">Thank you for reaching out. We'll get back to you within 24 hours.</p>
-                        <button 
+                        <button
                           onClick={() => setStatus("idle")}
                           className="text-primary font-medium underline underline-offset-4"
                         >
@@ -145,11 +151,11 @@ const Contact = () => {
                         </button>
                       </motion.div>
                     ) : (
-                      <motion.form 
+                      <motion.form
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onSubmit={handleSubmit} 
+                        onSubmit={handleSubmit}
                         className="space-y-6"
                       >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -51,7 +51,7 @@ export const Header = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  Theन्न
+                  Thenn
                 </motion.span>
               </Magnetic>
             </Link>

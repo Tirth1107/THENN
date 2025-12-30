@@ -29,7 +29,7 @@ export const WhyThennSection = () => {
           <div>
             <ScrollReveal>
               <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-6 block">
-                Why Theन्न
+                Why Thenn
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>

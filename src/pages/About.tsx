@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CTASection } from "@/components/sections/CTASection";
+import SEO from "@/components/SEO";
 
 const values = [
   {
@@ -24,13 +25,18 @@ const values = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="About Us — Our Story & Values"
+        description="Discover the team and values behind Thenn. We're a design-first agency obsessed with creating digital experiences that elevate brands and inspire audiences."
+        canonical="/about"
+      />
       {/* Hero */}
       <section className="pt-32 lg:pt-40 pb-20">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl">
             <ScrollReveal>
               <span className="text-sm font-medium tracking-widest uppercase text-primary mb-4 block">
-                About Theन्न
+                About Thenn
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -71,7 +77,7 @@ const About = () => {
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Theन्न was founded with a simple belief: exceptional design is the
+                  Thenn was founded with a simple belief: exceptional design is the
                   foundation of every successful brand. In a world saturated with noise,
                   we create clarity.
                 </p>
@@ -100,7 +106,7 @@ const About = () => {
           <div className="max-w-3xl mb-16">
             <ScrollReveal>
               <span className="text-sm font-medium tracking-widest uppercase text-primary mb-4 block">
-                The Minds Behind THENN
+                The Minds Behind Thenn
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
