@@ -103,13 +103,13 @@ const SEO = ({
             <meta property="og:description" content={fullDescription} />
             <meta property="og:type" content={ogType} />
             <meta property="og:url" content={url} />
-            <meta property="og:image" content={ogImage.replace("thenn.in", "www.thenn.in")} />
+            <meta property="og:image" content={ogImage.replace("https://thenn.in", "https://www.thenn.in")} />
 
             {/* Twitter */}
             <meta name="twitter:card" content={twitterCard} />
             <meta name="twitter:title" content={fullTitle} />
             <meta name="twitter:description" content={fullDescription} />
-            <meta name="twitter:image" content={ogImage.replace("thenn.in", "www.thenn.in")} />
+            <meta name="twitter:image" content={ogImage.replace("https://thenn.in", "https://www.thenn.in")} />
 
             {/* Bing / DuckDuckGo / Pinterest Verification (Optional but Recommended) */}
             <meta name="msvalidate.01" content="5F1B8C8D8C8D8C8D8C8D8C8D8C8D8C8D" />

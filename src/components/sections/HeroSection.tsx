@@ -88,7 +88,7 @@ export const HeroSection = () => {
 
             {/* Line 2 */}
             <div className="overflow-hidden">
-              <motion.h1
+              <div
                 className="text-[clamp(2rem,6.5vw,5.5rem)] font-bold tracking-tighter text-foreground leading-[1.05]"
               >
                 {line2.split("").map((char, i) => (
@@ -106,7 +106,7 @@ export const HeroSection = () => {
                     {char === " " ? "\u00A0" : char}
                   </motion.span>
                 ))}
-              </motion.h1>
+              </div>
             </div>
           </div>
 
