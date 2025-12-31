@@ -4,28 +4,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/logo.jpg" />
+
   <title>Thenn — Premium Website Development & Digital Design Agency</title>
   <meta name="description"
-    content="Thenn is a premium digital agency founded by Tirth Joshi, specialising in high-performance website development, brand strategy, and immersive digital experiences." />
+    content="Thenn is a premium digital agency specialising in high-performance websites, UI/UX design, and modern digital solutions." />
   <meta name="author" content="Thenn" />
   <meta name="keywords"
     content="Thenn, Tirth Joshi, Dhruman Kaneriya, Vaibhav Makvana, website development, premium design, digital agency, UI/UX design, custom websites, India web agency, high-performance web development" />
 
   <meta property="og:title" content="Thenn — Premium Website Development & Digital Design Agency" />
   <meta property="og:description"
-    content="Crafting exceptional websites and brand experiences for businesses that refuse to blend in. Founded by Tirth Joshi." />
+    content="Thenn is a premium digital agency specialising in high-performance websites, UI/UX design, and modern digital solutions." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thenn.in" />
-  <meta property="og:image" content="https://thenn.in/logo.jpg" />
+  <meta property="og:url" content="https://www.thenn.in" />
+  <meta property="og:image" content="https://www.thenn.in/logo.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@thenn_in" />
   <meta name="twitter:title" content="Thenn — Premium Website Development & Digital Design Agency" />
   <meta name="twitter:description"
-    content="Premium website development and digital design agency founded by Tirth Joshi." />
-  <meta name="twitter:image" content="https://thenn.in/logo.jpg" />
+    content="Thenn is a premium digital agency specialising in high-performance websites, UI/UX design, and modern digital solutions." />
+  <meta name="twitter:image" content="https://www.thenn.in/logo.jpg" />
 
-  <link rel="canonical" href="https://thenn.in" />
+  <link rel="canonical" href="https://www.thenn.in" />
 
   <script type="application/ld+json">
     {
@@ -65,7 +69,22 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Fallback for bots and slow JS rendering -->
+    <header style="display:none;">
+      <h1>Thenn — Premium Website Development & Digital Design Agency</h1>
+      <p>Thenn is a premium digital agency specialising in high-performance websites, UI/UX design, and modern digital
+        solutions.</p>
+    </header>
+  </div>
+  <noscript>
+    <div style="padding: 20px; text-align: center;">
+      <h1>Thenn</h1>
+      <p>Thenn is a premium digital agency specialising in high-performance websites, UI/UX design, and modern digital
+        solutions.</p>
+      <p>Please enable JavaScript to view the full experience.</p>
+    </div>
+  </noscript>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

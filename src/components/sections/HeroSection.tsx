@@ -15,8 +15,8 @@ export const HeroSection = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
-  const line1 = "We design websites";
-  const line2 = "that define brands.";
+  const line1 = "High-performance websites";
+  const line2 = "for ambitious brands.";
 
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
@@ -61,7 +61,7 @@ export const HeroSection = () => {
         className="container mx-auto px-6 relative z-10 pt-20 pb-20"
       >
         <div className="max-w-4xl mx-auto text-center glass-morphism p-8 md:p-16 lg:p-20 rounded-[2rem] md:rounded-[3rem] border border-white/10 shadow-2xl backdrop-blur-xl">
-          
+
           {/* Main Headline - Line 1 */}
           <div className="overflow-hidden mb-1">
             <motion.h1
@@ -115,8 +115,7 @@ export const HeroSection = () => {
             transition={{ duration: 1, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
             className="text-base md:text-lg lg:text-xl text-muted-foreground/90 max-w-xl mx-auto mb-10 leading-relaxed"
           >
-            Premium web experiences for brands that refuse to blend in.
-            Crafted with precision, delivered with purpose.
+            Thenn is a premium <strong>website development & digital design agency</strong> crafting bespoke experiences that refuse to blend in.
           </motion.p>
 
           {/* CTA Buttons */}

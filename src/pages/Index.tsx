@@ -13,7 +13,7 @@ const Index = () => {
     <Layout>
       <SEO
         title="Thenn — Premium Website Development & Digital Design Agency"
-        description="Crafting exceptional websites and brand experiences for businesses that refuse to blend in. Founded by Tirth Joshi."
+        description="Thenn is a premium digital agency specialising in high-performance website development, UI/UX design, and custom digital solutions for ambitious startups and brands."
         canonical="/"
       />
       <HeroSection />

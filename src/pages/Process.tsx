@@ -70,8 +70,8 @@ const Process = () => {
   return (
     <Layout>
       <SEO
-        title="Our Process — How We Work"
-        description="Learn about our proven methodology for delivering exceptional digital experiences, from discovery and design to build and launch."
+        title="Our Process — How We Build High-Performance Websites"
+        description="Discover our proven methodology for delivering exceptional digital experiences, from strategic discovery and UI/UX design to robust web development and launch."
         canonical="/process"
       />
       {/* Hero */}

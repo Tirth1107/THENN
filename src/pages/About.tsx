@@ -26,8 +26,8 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="About Us — Our Story & Values"
-        description="Discover the team and values behind Thenn. We're a design-first agency obsessed with creating digital experiences that elevate brands and inspire audiences."
+        title="About Thenn — Digital Design & Branding Agency"
+        description="Meet the team at Thenn, a design-first digital agency obsessed with creating high-performance websites and strategic brand transformations that elevate businesses."
         canonical="/about"
       />
       {/* Hero */}

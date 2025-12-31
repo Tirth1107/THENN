@@ -46,8 +46,8 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Us — Start a Project"
-        description="Ready to elevate your digital presence? Get in touch with us to discuss your project, goals, and how we can help you achieve them."
+        title="Work With Us — Start Your Digital Transformation"
+        description="Ready to elevate your digital presence? Contact Thenn today to discuss your website development, UI/UX design, or brand strategy project."
         canonical="/contact"
       />
       {/* Hero */}
