@@ -58,54 +58,56 @@ export const HeroSection = () => {
 
       <motion.div
         style={{ y, opacity, scale }}
-        className="container mx-auto px-6 relative z-10 pt-20 pb-20"
+        className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen pt-10 pb-20"
       >
-        <div className="max-w-4xl mx-auto text-center glass-morphism p-8 md:p-16 lg:p-20 rounded-[2rem] md:rounded-[3rem] border border-white/10 shadow-2xl backdrop-blur-xl">
+        <div className="w-full max-w-[90rem] mx-auto text-center glass-morphism p-[clamp(2rem,6vw,6rem)] rounded-[clamp(2rem,4vw,4rem)] border border-white/10 shadow-2xl backdrop-blur-xl">
+          {/* Main Headline Wrapper */}
+          <div className="flex flex-col gap-[clamp(0.5rem,1.5vw,1rem)] mb-[clamp(2rem,4vw,4rem)]">
+            {/* Line 1 */}
+            <div className="overflow-hidden">
+              <motion.h1
+                className="text-[clamp(2rem,6.5vw,5.5rem)] font-bold tracking-tighter text-foreground leading-[1.05]"
+              >
+                {line1.split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block"
+                    initial={{ y: "100%", opacity: 0, rotateX: 45 }}
+                    animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.4 + i * 0.02,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </motion.h1>
+            </div>
 
-          {/* Main Headline - Line 1 */}
-          <div className="overflow-hidden mb-1">
-            <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
-            >
-              {line1.split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  className="inline-block"
-                  initial={{ y: "100%", opacity: 0, rotateX: 45 }}
-                  animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.4 + i * 0.02,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-            </motion.h1>
-          </div>
-
-          {/* Main Headline - Line 2 */}
-          <div className="overflow-hidden mb-8">
-            <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
-            >
-              {line2.split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  className="inline-block text-gradient"
-                  initial={{ y: "100%", opacity: 0, rotateX: -45 }}
-                  animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.7 + i * 0.02,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-            </motion.h1>
+            {/* Line 2 */}
+            <div className="overflow-hidden">
+              <motion.h1
+                className="text-[clamp(2rem,6.5vw,5.5rem)] font-bold tracking-tighter text-foreground leading-[1.05]"
+              >
+                {line2.split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block text-gradient"
+                    initial={{ y: "100%", opacity: 0, rotateX: -45 }}
+                    animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.7 + i * 0.02,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </motion.h1>
+            </div>
           </div>
 
           {/* Subheadline */}
@@ -113,7 +115,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base md:text-lg lg:text-xl text-muted-foreground/90 max-w-xl mx-auto mb-10 leading-relaxed"
+            className="text-[clamp(1rem,1.5vw,1.25rem)] text-muted-foreground/80 max-w-[clamp(20rem,60vw,50rem)] mx-auto mb-[clamp(2.5rem,5vw,4rem)] leading-relaxed"
           >
             Thenn is a premium <strong>website development & digital design agency</strong> crafting bespoke experiences that refuse to blend in.
           </motion.p>
