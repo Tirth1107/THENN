@@ -3,14 +3,18 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Twitterbot
+User-agent: DuckDuckBot
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: Bravebot
+Allow: /
+
+User-agent: applebot
 Allow: /
 
 User-agent: *
 Allow: /
 
-Sitemap: https://thenn.in/sitemap.xml
+Sitemap: https://www.thenn.in/sitemap.xml

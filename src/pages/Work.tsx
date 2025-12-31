@@ -55,8 +55,8 @@ const Work = () => {
   return (
     <Layout>
       <SEO
-        title="Our Work — Selected Projects"
-        description="Explore our portfolio of premium digital experiences, high-performance websites, and strategic brand transformations."
+        title="Expert Website Development & Digital Design Portfolio"
+        description="Explore Thenn's portfolio of selected projects, featuring high-performance websites, AI integrations, and strategic brand transformations for modern education and tech leaders."
         canonical="/work"
       />
       {/* Hero Section */}
