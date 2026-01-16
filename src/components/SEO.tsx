@@ -41,11 +41,6 @@ const SEO = ({
                 "@type": "Person",
                 "name": "Dhruman Kaneriya",
                 "jobTitle": "Co-Founder"
-            },
-            {
-                "@type": "Person",
-                "name": "Vaibhav Makvana",
-                "jobTitle": "CTO"
             }
         ],
         "sameAs": [

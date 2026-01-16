@@ -17,6 +17,8 @@ import Branding from "./pages/Branding";
 import CustomWebApps from "./pages/CustomWebApps";
 import MaintenanceSupport from "./pages/MaintenanceSupport";
 import Founders from "./pages/Founders";
+import TirthJoshi from "./pages/TirthJoshi";
+import DhrumanKaneriya from "./pages/DhrumanKaneriya";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +41,8 @@ const AnimatedRoutes = () => {
         <Route path="/custom-web-apps" element={<CustomWebApps />} />
         <Route path="/maintenance-support" element={<MaintenanceSupport />} />
         <Route path="/founders" element={<Founders />} />
+        <Route path="/founders/tirth-joshi" element={<TirthJoshi />} />
+        <Route path="/founders/dhruman-kaneriya" element={<DhrumanKaneriya />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
