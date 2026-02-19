@@ -6,12 +6,32 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Briefcase, MessageCircle, Instagram } from "lucide-react";
 
 const TirthJoshi = () => {
+    const personSchema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tirth Joshi",
+        "jobTitle": "Founder & CEO",
+        "url": "https://www.thenn.in/founders/tirth-joshi",
+        "image": "https://www.thenn.in/logo.jpg",
+        "sameAs": [
+            "https://www.linkedin.com/in/tirth-joshi",
+            "https://twitter.com/tirthjoshi",
+            "https://instagram.com/justtirthjoshi"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Thenn",
+            "url": "https://www.thenn.in"
+        }
+    };
+
     return (
         <Layout>
             <SEO
                 title="Tirth Joshi | Founder & CEO — THENN"
                 description="Meet Tirth Joshi, Founder & CEO of THENN. Leading the mission to help businesses build a powerful and professional online presence through modern digital solutions."
                 canonical="/founders/tirth-joshi"
+                structuredData={personSchema}
             />
 
             {/* Hero Section */}

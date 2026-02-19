@@ -25,8 +25,8 @@ const Founders = () => {
     return (
         <Layout>
             <SEO
-                title="Founders — Tirth Joshi, Dhruman Kaneriya, Vaibhav Makvana"
-                description="Meet the leadership team at Thenn. Tirth Joshi (Founder & CEO), Dhruman Kaneriya (Co-Founder), and Vaibhav Makvana (CTO) carving the future of digital experiences."
+                title="Founders — Tirth Joshi, Dhruman Kaneriya"
+                description="Meet the leadership team at Thenn. Tirth Joshi (Founder & CEO) and Dhruman Kaneriya (Co-Founder) carving the future of digital experiences."
                 canonical="/founders"
             />
 

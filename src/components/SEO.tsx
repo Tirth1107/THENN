@@ -7,6 +7,7 @@ interface SEOProps {
     ogType?: string;
     ogImage?: string;
     twitterCard?: string;
+    structuredData?: Record<string, any>;
 }
 
 const SEO = ({
@@ -16,6 +17,7 @@ const SEO = ({
     ogType = "website",
     ogImage = "https://thenn.in/logo.jpg",
     twitterCard = "summary_large_image",
+    structuredData,
 }: SEOProps) => {
     const siteName = "Thenn";
     const defaultTitle = "Thenn — Premium Website Development & Digital Design Agency";
@@ -119,6 +121,11 @@ const SEO = ({
             <script type="application/ld+json">
                 {JSON.stringify(breadcrumbSchema)}
             </script>
+            {structuredData && (
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
+            )}
         </Helmet>
     );
 };

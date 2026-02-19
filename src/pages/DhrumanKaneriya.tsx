@@ -6,12 +6,31 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Briefcase, MessageCircle, Instagram, ShieldCheck, PieChart, Users } from "lucide-react";
 
 const DhrumanKaneriya = () => {
+    const personSchema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dhruman Kaneriya",
+        "jobTitle": "Co-Founder & CFO",
+        "url": "https://www.thenn.in/founders/dhruman-kaneriya",
+        "image": "https://www.thenn.in/logo.jpg",
+        "sameAs": [
+            "https://www.linkedin.com/in/dhruman-kaneriya",
+            "https://instagram.com/dhrumankaneriya"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Thenn",
+            "url": "https://www.thenn.in"
+        }
+    };
+
     return (
         <Layout>
             <SEO
                 title="Dhruman Kaneriya | Co-Founder & CFO — THENN"
                 description="Meet Dhruman Kaneriya, Co-Founder & CFO of THENN. Managing client-side operations and ensuring financial stability and smooth project delivery."
                 canonical="/founders/dhruman-kaneriya"
+                structuredData={personSchema}
             />
 
             {/* Hero Section */}
@@ -175,7 +194,6 @@ const DhrumanKaneriya = () => {
                             <motion.a
                                 whileHover={{ y: -5 }}
                                 href="mailto:dhruman@thenn.in"
-                                className="flex items-center gap-3 px-8 py-4 rounded-full bg-foreground text-background hover:bg-primary transition-all duration-300"
                             >
                                 <Mail className="w-5 h-5" />
                                 <span className="font-medium text-background group-hover:text-primary-foreground">Email Me</span>

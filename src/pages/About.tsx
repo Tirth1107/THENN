@@ -133,13 +133,6 @@ const About = () => {
                 <p className="text-muted-foreground">Strategic partner focused on business growth and operations.</p>
               </div>
             </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <div className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 p-8 hover:border-primary/50 transition-colors duration-500">
-                <h3 className="text-2xl font-semibold mb-1">Vaibhav Makvana</h3>
-                <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">CTO</p>
-                <p className="text-muted-foreground">Technical architect ensuring robust and high-performance digital solutions.</p>
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </section>
