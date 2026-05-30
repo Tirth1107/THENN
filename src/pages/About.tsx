@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CTASection } from "@/components/sections/CTASection";
+import SEO from "@/components/SEO";
 
 const values = [
   {
@@ -24,6 +25,11 @@ const values = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="About Thenn — Digital Design & Branding Agency"
+        description="Meet the team at Thenn, a design-first digital agency obsessed with creating high-performance websites and strategic brand transformations that elevate businesses."
+        canonical="/about"
+      />
       {/* Hero */}
       <section className="pt-32 lg:pt-40 pb-20">
         <div className="container mx-auto px-6 lg:px-12">
@@ -42,7 +48,7 @@ const About = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                A design-first agency obsessed with creating digital experiences 
+                A design-first agency obsessed with creating digital experiences
                 that elevate brands and inspire audiences.
               </p>
             </ScrollReveal>
@@ -54,42 +60,79 @@ const About = () => {
       <section className="pb-32 lg:pb-40">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-            <ScrollReveal>
+            {/* <ScrollReveal>
               <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-border/50">
                 <div className="w-full h-full flex items-center justify-center">
                   <span className="text-8xl font-bold text-foreground/5">T</span>
                 </div>
               </div>
-            </ScrollReveal>
+            </ScrollReveal> */}
 
             <div className="flex flex-col justify-center">
               <ScrollReveal>
                 <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-8">
-                  Design is not just what it looks like. 
+                  Design is not just what it looks like.
                   Design is how it works.
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Thenn was founded with a simple belief: exceptional design is the 
-                  foundation of every successful brand. In a world saturated with noise, 
+                  Thenn was founded with a simple belief: exceptional design is the
+                  foundation of every successful brand. In a world saturated with noise,
                   we create clarity.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  We're a small team of strategists, designers, and developers who 
-                  believe in doing fewer things, but doing them exceptionally well. 
+                  We're a small team of strategists, designers, and developers who
+                  believe in doing fewer things, but doing them exceptionally well.
                   Quality over quantity, always.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.3}>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Every project we take on receives our full attention. We partner 
+                  Every project we take on receives our full attention. We partner
                   with brands we believe in and invest ourselves in their success.
                 </p>
               </ScrollReveal>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-32 lg:py-40">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-16">
+            <ScrollReveal>
+              <span className="text-sm font-medium tracking-widest uppercase text-primary mb-4 block">
+                The Minds Behind Thenn
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1]">
+                Leadership
+                <br />
+                <span className="text-muted-foreground">Team</span>
+              </h2>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ScrollReveal delay={0.1}>
+              <div className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 p-8 hover:border-primary/50 transition-colors duration-500">
+                <h3 className="text-2xl font-semibold mb-1">Tirth Joshi</h3>
+                <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">Founder & CEO</p>
+                <p className="text-muted-foreground">Visionary leader driving the agency's creative and strategic direction.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 p-8 hover:border-primary/50 transition-colors duration-500">
+                <h3 className="text-2xl font-semibold mb-1">Parth Joshi</h3>
+                <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">CFO</p>
+                <p className="text-muted-foreground">Managing client operations and ensuring financial stability and smooth project delivery.</p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

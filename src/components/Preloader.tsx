@@ -41,7 +41,7 @@ export default function Preloader({ onDone }: PreloaderProps) {
   }, [onDone]);
 
   return (
-    <div className={"preloader" + (exiting ? " preloader--exit" : "") } aria-hidden>
+    <div className={"preloader" + (exiting ? " preloader--exit" : "")} aria-hidden>
       <div className="preloader__inner">
         <svg
           className="preloader__logo"
@@ -58,7 +58,7 @@ export default function Preloader({ onDone }: PreloaderProps) {
               <stop offset="100%" stopColor="hsl(var(--primary))" />
             </linearGradient>
           </defs>
-          <title id="preloader-logo-title">Theन्न</title>
+          <title id="preloader-logo-title">Thenn</title>
           <text
             x="50%"
             y="55%"
@@ -69,7 +69,7 @@ export default function Preloader({ onDone }: PreloaderProps) {
             fontSize={56}
             fill="url(#preloaderGradient)"
           >
-            Theन्न
+            Thenn
           </text>
         </svg>
         <div className={"preloader__tagline" + (showTagline ? " visible" : "")}>website for everyone...</div>

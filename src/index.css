@@ -6,45 +6,45 @@
 
 @layer base {
   :root {
-    --background: 220 15% 6%;
-    --foreground: 40 10% 92%;
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 15% 9%;
-    --card-foreground: 40 10% 92%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 220 15% 9%;
-    --popover-foreground: 40 10% 92%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 40 25% 72%;
-    --primary-foreground: 220 15% 6%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 2%;
 
-    --secondary: 220 10% 14%;
-    --secondary-foreground: 40 10% 85%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 10% 18%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 40 25% 72%;
-    --accent-foreground: 220 15% 6%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 40 10% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 10% 15%;
-    --input: 220 10% 15%;
-    --ring: 40 25% 72%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 80%;
 
     --radius: 0.5rem;
 
     /* Custom design tokens */
-    --text-primary: 40 10% 92%;
-    --text-secondary: 220 10% 65%;
-    --text-muted: 220 10% 45%;
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 70%;
+    --text-muted: 0 0% 50%;
     
-    --surface-elevated: 220 15% 10%;
-    --surface-overlay: 220 15% 12%;
+    --surface-elevated: 0 0% 6%;
+    --surface-overlay: 0 0% 8%;
     
-    --glow-accent: 40 25% 72%;
+    --glow-accent: 0 0% 100%;
   }
 }
 
@@ -90,6 +90,43 @@
     border: 1px solid transparent;
     background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
                 linear-gradient(135deg, hsl(var(--border)) 0%, hsl(var(--primary) / 0.2) 100%) border-box;
+  }
+
+  .glass-morphism {
+    @apply backdrop-blur-md bg-white/[0.02] border border-white/[0.05];
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  .glass-card {
+    @apply glass-morphism rounded-2xl transition-all duration-500 hover:bg-white/[0.04] hover:border-white/[0.1];
+  }
+
+  .glass-border {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-clip: padding-box;
+  }
+
+  .liquid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    filter: blur(80px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .liquid-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%);
+    animation: liquid 20s ease-in-out infinite;
   }
 }
 

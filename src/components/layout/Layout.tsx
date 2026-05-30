@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import Preloader from "@/components/Preloader";
+import { LiquidBackground } from "../LiquidBackground";
 
 interface LayoutProps {
   children: ReactNode;
@@ -34,15 +35,16 @@ export const Layout = ({ children }: LayoutProps) => {
   const [loading, setLoading] = useState(true);
   return (
     <motion.div
-      className="min-h-screen bg-background"
+      className="min-h-screen bg-background relative overflow-hidden"
       variants={pageVariants}
       initial="initial"
       animate="enter"
       exit="exit"
     >
+      <LiquidBackground />
       <Preloader onDone={() => setLoading(false)} />
       <Header />
-      <main id="main-content" className={loading ? "preloading" : ""} aria-hidden={loading}>{children}</main>
+      <main id="main-content" className={loading ? "preloading relative z-10" : "relative z-10"} aria-hidden={loading}>{children}</main>
       <Footer />
       <WhatsAppButton />
     </motion.div>

@@ -34,12 +34,12 @@ export const Header = () => {
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/30" : ""
-        }`}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled ? "py-4" : "py-6"
+          }`}
       >
         <div className="container mx-auto px-6 lg:px-12">
+          <div className={`absolute inset-0 transition-opacity duration-700 ${isScrolled ? "opacity-100 backdrop-blur-xl bg-background/70 border-b border-border/50" : "opacity-0"}`} />
           <nav className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
             <Link to="/" className="relative z-10">
@@ -49,7 +49,7 @@ export const Header = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  Thenn
+                  THENN.
                 </motion.span>
               </Magnetic>
             </Link>
@@ -68,7 +68,7 @@ export const Header = () => {
                     className="group relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
                   >
                     {link.name}
-                    <motion.span 
+                    <motion.span
                       className="absolute -bottom-1 left-0 h-px bg-primary origin-left"
                       initial={{ scaleX: 0 }}
                       whileHover={{ scaleX: 1 }}
@@ -90,14 +90,14 @@ export const Header = () => {
               <Magnetic strength={0.2}>
                 <Link
                   to="/contact"
-                  className="group relative flex items-center gap-2 px-6 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-full overflow-hidden transition-all duration-300"
+                  className="group relative flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-foreground text-background rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95"
                 >
                   <span className="relative z-10">Start a Project</span>
                   <motion.div
-                    className="absolute inset-0 bg-foreground"
+                    className="absolute inset-0 bg-white/20"
                     initial={{ x: "-100%" }}
-                    whileHover={{ x: 0 }}
-                    transition={{ duration: 0.4 }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
                   />
                 </Link>
               </Magnetic>
@@ -148,7 +148,7 @@ export const Header = () => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 lg:hidden bg-background"
           >
-            <motion.div 
+            <motion.div
               className="flex flex-col items-center justify-center h-full gap-8"
               initial="closed"
               animate="open"
