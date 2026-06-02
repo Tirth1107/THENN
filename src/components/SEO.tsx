@@ -67,6 +67,29 @@ const SEO = ({
         "url": "https://www.thenn.in"
     };
 
+    const localBusinessSchema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Thenn Digital Agency",
+        "image": "https://www.thenn.in/logo.jpg",
+        "url": "https://www.thenn.in",
+        "telephone": "+91-7016565502",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rajkot",
+            "addressLocality": "Rajkot",
+            "addressRegion": "GJ",
+            "postalCode": "360001",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 22.3039,
+            "longitude": 70.8022
+        },
+        "priceRange": "$$"
+    };
+
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -117,6 +140,9 @@ const SEO = ({
             </script>
             <script type="application/ld+json">
                 {JSON.stringify(websiteSchema)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(localBusinessSchema)}
             </script>
             <script type="application/ld+json">
                 {JSON.stringify(breadcrumbSchema)}

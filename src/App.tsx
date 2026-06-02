@@ -20,6 +20,8 @@ import Founders from "./pages/Founders";
 import TirthJoshi from "./pages/TirthJoshi";
 import ParthJoshi from "./pages/ParthJoshi";
 import NotFound from "./pages/NotFound";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +45,8 @@ const AnimatedRoutes = () => {
         <Route path="/founders" element={<Founders />} />
         <Route path="/founders/tirth-joshi" element={<TirthJoshi />} />
         <Route path="/founders/parth-joshi" element={<ParthJoshi />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

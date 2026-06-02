@@ -71,9 +71,13 @@ export const HeroSection = () => {
         <div className="w-full max-w-[90rem] mx-auto text-center glass-morphism p-[clamp(2rem,6vw,6rem)] rounded-[clamp(2rem,4vw,4rem)] border border-white/10 shadow-2xl backdrop-blur-xl">
           {/* Main Headline Wrapper */}
           <div className="flex flex-col gap-[clamp(0.5rem,1.5vw,1rem)] mb-[clamp(2rem,4vw,4rem)]">
+            
+            {/* Screen Reader / SEO H1 */}
+            <h1 className="sr-only">High-performance websites for ambitious brands.</h1>
+
             {/* Line 1 */}
-            <div className="overflow-hidden">
-              <motion.h1
+            <div className="overflow-hidden" aria-hidden="true">
+              <div
                 className="text-[clamp(2rem,6.5vw,5.5rem)] font-bold tracking-tighter text-foreground leading-[1.05]"
               >
                 {line1.split("").map((char, i) => (
@@ -91,7 +95,7 @@ export const HeroSection = () => {
                     {char === " " ? "\u00A0" : char}
                   </motion.span>
                 ))}
-              </motion.h1>
+              </div>
             </div>
 
             {/* Line 2 */}

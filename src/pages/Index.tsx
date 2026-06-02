@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Thenn — Premium Website Development & Digital Design Agency"
+        title="Award-Winning Website Development & UI/UX Design Agency"
         description="Thenn is a premium digital agency specialising in high-performance website development, UI/UX design, and custom digital solutions for ambitious startups and brands."
         canonical="/"
       />
