@@ -115,9 +115,10 @@
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    filter: blur(80px);
-    opacity: 0.6;
+    filter: blur(40px); /* Reduced from 80px for better performance */
+    opacity: 0.4; /* Reduced from 0.6 */
     pointer-events: none;
+    will-change: transform; /* Add hardware acceleration */
   }
 
   .liquid-blob {
@@ -125,8 +126,9 @@
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, hsl(var(--secondary) / 0.15) 0%, transparent 70%); /* Sky Blue Blob */
-    animation: liquid 20s ease-in-out infinite;
+    background: radial-gradient(circle, hsl(var(--secondary) / 0.1) 0%, transparent 60%); /* Optimized gradient */
+    animation: liquid 40s ease-in-out infinite; /* Doubled duration for less frequent repaints */
+    will-change: transform;
   }
 }
 

@@ -11,7 +11,6 @@ export const HeroSection = () => {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
@@ -65,7 +64,6 @@ export const HeroSection = () => {
       />
 
       <motion.div
-        style={{ y, opacity, scale }}
         className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen pt-10 pb-20"
       >
         <div className="w-full max-w-[90rem] mx-auto text-center glass-morphism p-[clamp(2rem,6vw,6rem)] rounded-[clamp(2rem,4vw,4rem)] border border-white/10 shadow-2xl backdrop-blur-xl">
