@@ -50,7 +50,7 @@ export const Header = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  THENN.
+                  Thenn.in
                 </motion.span>
               </Magnetic>
             </Link>

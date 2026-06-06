@@ -3,15 +3,21 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, MessageCircle, Mail, MapPin, CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import SEO from "@/components/SEO";
 
 const Contact = () => {
+  const [searchParams] = useSearchParams();
+  const serviceParam = searchParams.get("service");
+  
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    message: "",
+    message: serviceParam 
+      ? `Hi Thenn team, I am interested in your service: "${serviceParam}". Here are some details about my project...` 
+      : "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

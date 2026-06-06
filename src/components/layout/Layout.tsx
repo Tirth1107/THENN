@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -33,6 +33,25 @@ const pageVariants = {
 
 export const Layout = ({ children }: LayoutProps) => {
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Scroll to top immediately when Layout mounts on screen
+    window.scrollTo(0, 0);
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(0, { immediate: true });
+    }
+    
+    // Fallback timeout to capture any delayed height changes
+    const t = setTimeout(() => {
+      window.scrollTo(0, 0);
+      if ((window as any).lenis) {
+        (window as any).lenis.scrollTo(0, { immediate: true });
+      }
+    }, 50);
+
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <motion.div
       className="min-h-screen bg-background relative overflow-hidden"
